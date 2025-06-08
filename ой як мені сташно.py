@@ -53,6 +53,6 @@ while True:
     print(B)
     A=A//10
     if A==0:
-        break
+        print("o hello year!!!")
 
 
