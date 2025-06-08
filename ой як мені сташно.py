@@ -54,5 +54,6 @@ while True:
     A=A//10
     if A==0:
         print("o hello year!!!")
+        print("дратуте")
 
 
