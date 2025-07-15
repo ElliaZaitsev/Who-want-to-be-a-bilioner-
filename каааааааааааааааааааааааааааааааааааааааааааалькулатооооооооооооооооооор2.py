@@ -22,6 +22,7 @@ def nabaK():
     lbly = 0
     nul = 0
     A["text"]=0
+    lambda:q(1)
 def q1():
     q(1)
 def q2():
@@ -86,7 +87,7 @@ I=Button(text="4",bg=MEGAPLEMN,fg=MINIPELEMN,height=5,width=10,command=q4)
 I.grid(row=1,column=0,sticky="nsew")
 F=Button(text="5",bg=MEGAPLEMN,fg=MINIPELEMN,height=5,width=10,command=q5)
 F.grid(row=1,column=1,sticky="nsew")
-K=Button(text="6",bg=MEGAPLEMN,fg=MINIPELEMN,height=5,width=10,command=q6)
+K=Button(text="6",bg=MEGAPLEMN,fg=MINIPELEMN,height=5,width=10,command=lambda:q(6))
 K.grid(row=1,column=2,sticky="nsew")
 M=Button(text="7",bg=MEGAPLEMN,fg=MINIPELEMN,height=5,width=10,command=q7)
 M.grid(row=2,column=0,sticky="nsew")

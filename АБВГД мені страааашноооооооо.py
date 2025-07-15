@@ -55,5 +55,5 @@
 #     elif A<0:
 #         print("Ваше число негативне")
 # AY()
-print("hello from GitHub!!!")
-
+# print("hello from GitHub!!!")
+https://youtube.com/shorts/XHBEmBEv4ys?feature=shared

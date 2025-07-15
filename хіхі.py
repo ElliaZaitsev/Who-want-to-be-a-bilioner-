@@ -7,7 +7,7 @@
 # t.circle(100)
 # t.end_fill()
 # t.done()
-# import turtle as t
+# import turtle as
 # t.speed(10)
 # t.penup()
 # t.goto(-500,100)
