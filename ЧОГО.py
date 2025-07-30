@@ -11,9 +11,12 @@ color5="#596F7D"
 colortowinner="#CF1313"
 colortodefeated="#1368CF"
 colortodumpling="#F2BE00"
+mylives=2
+mycoins=0
 def q(number):
     print(number)
     G = random.choice(["камінь","ножниці","папір"])
+    global mylives,mycoins
 # I["text"]="Вибір комп'ютера:"+G
     # if G=="папір" and SLOVA["text"]=="ножниці":
     #     I["text"]="Вибір комп'ютера:папір ваш вибір ножниці"
@@ -44,39 +47,48 @@ def q(number):
     if my_choice=='камінь':
         if G=='папір':
             D['text']="комп'ютер виграв"
+            mylives-=1
             app["bg"]="#99CC3D"
             D["bg"]=colortodefeated
         elif G =='ножниці':
             D['text'] = 'користувач виграв'
+            mycoins+=100
             D["bg"]=colortowinner
             app["bg"]="#EB9C60"
         else:
             D["text"] = "нічія"
+            mycoins+=50
             D["bg"]=colortodumpling
             app["bg"]="#376BDB"
     elif my_choice=="ножниці":
         if G=="камінь":
             D['text'] = "комп'ютер виграв"
+            mylives-=1
             app["bg"] = "#2082A1"
             D["bg"]=colortodefeated
         elif G == 'папір':
             D['text'] = 'користувач виграв'
+            mycoins+=100
             app["bg"] = colortowinner
             D["bg"]=colortowinner
         else:
             D["text"] = "нічія"
+            mycoins+=50
             app["bg"] = colortodumpling
             D["bg"]=colortodumpling
     elif my_choice=="папір":
         if G=="ножниці":
             D['text'] = "комп'ютер виграв"
+            mylives-=1
             app["bg"] = "#8BCCC8"
             D["bg"]=colortodefeated
         elif G == 'камінь':
             D['text'] = 'користувач виграв'
+            mycoins+=100
             app["bg"] = colortowinner
         else:
             D["text"] = "нічія"
+            mycoins+=50
             app["bg"] = "#376BDB"
             D["bg"]=colortodumpling
     I['text'] = f"Вибір комп'ютера: {G} ваш вибір: {my_choice}"
@@ -86,8 +98,16 @@ def q(number):
         D["bg"] = colortowinner
     elif D['text'] =="комп'ютер виграв":
         D["bg"] = colortodefeated
-
-
+    def exit():
+        app.destroy()
+        app1=Tk()
+        pelmen=Label(text=f"ви програли😣 ваші бали {mycoins}",bg="white",fg="black",height=5,width=25,font=10000000000000000000000000000000000000000000)
+        pelmen.place(x=600,y=150)
+        amogus=Button(text="спробувати знову!",bg="white",fg="black",height=5,width=25,command=exit)
+        amogus.place(x=450,y=450)
+        app.mainloop()
+    if mylives==0:
+         exit()
     # I['text'] = "Вибір комп'ютера: " + G +" ваш вибір: "+ my_choice
 def q1():
     q("камінь")
