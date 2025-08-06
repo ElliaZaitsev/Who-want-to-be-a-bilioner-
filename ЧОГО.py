@@ -1,6 +1,9 @@
+
 from tkinter import *
 import random
+import json
 app=Tk()
+pelmenchiku={}
 app["bg"]="#F24624"
 global SLOVA
 color1="#779FBF"
@@ -11,12 +14,23 @@ color5="#596F7D"
 colortowinner="#CF1313"
 colortodefeated="#1368CF"
 colortodumpling="#F2BE00"
-mylives=2
+mylives=3
 mycoins=0
+name="бобрик"
+LAVRENIK=None
+def desk():
+    shtoeto=""
+    for i in data:
+        print(i["name"],i["mycoins"])
+        shtoeto=f"{i["name"]} виграв {i["mycoins"]}\n"
+    global kria
+    kria=Label(text=data,bg="white",fg="black",font=1000000000000000000000000)
+    kria.place(x=300,y=290)
+    kria["text"] += shtoeto
 def q(number):
     print(number)
     G = random.choice(["камінь","ножниці","папір"])
-    global mylives,mycoins
+    global mylives,mycoins,LAVRENIK,i,data,kria
 # I["text"]="Вибір комп'ютера:"+G
     # if G=="папір" and SLOVA["text"]=="ножниці":
     #     I["text"]="Вибір комп'ютера:папір ваш вибір ножниці"
@@ -99,15 +113,24 @@ def q(number):
     elif D['text'] =="комп'ютер виграв":
         D["bg"] = colortodefeated
     def exit():
+        global LAVRENIK
         app.destroy()
         app1=Tk()
+        app1.geometry("500x500")
         pelmen=Label(text=f"ви програли😣 ваші бали {mycoins}",bg="white",fg="black",height=5,width=25,font=10000000000000000000000000000000000000000000)
         pelmen.place(x=600,y=150)
-        amogus=Button(text="спробувати знову!",bg="white",fg="black",height=5,width=25,command=exit)
-        amogus.place(x=450,y=450)
-        app.mainloop()
+        LAVRENIK=Button(text="Таблиця",bg="white",fg="black",height=5,width=30,font=1000,command=desk)
+        LAVRENIK.place(x=570,y=350)
+        app1.mainloop()
     if mylives==0:
-         exit()
+        pelmenchiku["name"]="бобрик"
+        pelmenchiku["mycoins"] = mycoins
+        with open("my.json", "r", encoding="utf-8") as file:
+            data = json.load(file)
+            data.append(pelmenchiku)
+            with open("my.json", "w", encoding="utf-8") as file:
+                json.dump(data, file, ensure_ascii=False, indent=2)
+            exit()
     # I['text'] = "Вибір комп'ютера: " + G +" ваш вибір: "+ my_choice
 def q1():
     q("камінь")
