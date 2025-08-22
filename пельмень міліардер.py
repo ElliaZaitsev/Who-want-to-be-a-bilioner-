@@ -20,8 +20,8 @@ PELMEN11="#3A456B"
 PELMEN12="#4D5234"
 PELMEN13="#367A65"
 i=0
-global niam,playedadvice,update_question
 def advice50_advice50():
+    global niam, playedadvice, update_question,i
     podskazka50na50["state"]="disabled"
     answer1["state"] = "disabled"
     answer2["state"] = "disabled"
@@ -46,7 +46,7 @@ def advice50_advice50():
         for i in range(6):
             if numnumnum == i or answer_number == i or PEELMEEN == i:
                 answers[i]["state"] = "normal"
-
+        break
 def playeradviec():
     podskazkaporada["state"] = "disabled"
     answer1["state"] = "disabled"
@@ -56,20 +56,20 @@ def playeradviec():
     answer5["state"] = "disabled"
     answer6["state"] = "disabled"
         # podskazkaporada["state"]="disabled"
-        question = data[i]
-        answer_number = question['answers'].index(question['correctanswer'])
-        if answer_number == 0:
-            answer1["state"] = "normal"
-        elif answer_number == 1:
-            answer2["state"] = "normal"
-        elif answer_number == 2:
-            answer3["state"] = "normal"
-        elif answer_number == 3:
-            answer4["state"] = "normal"
-        elif answer_number == 4:
-            answer5["state"] = "normal"
-        elif answer_number == 5:
-            answer6["state"] = "normal"
+    question = data[i]
+    answer_number = question['answers'].index(question['correctanswer'])
+    if answer_number == 0:
+        answer1["state"] = "normal"
+    elif answer_number == 1:
+        answer2["state"] = "normal"
+    elif answer_number == 2:
+        answer3["state"] = "normal"
+    elif answer_number == 3:
+        answer4["state"] = "normal"
+    elif answer_number == 4:
+        answer5["state"] = "normal"
+    elif answer_number == 5:
+        answer6["state"] = "normal"
 def getmoney():
     app.destroy()
     theend=Tk()
@@ -87,19 +87,13 @@ def rightanswer(Button):
         answers["text"] = f"відповідь {i}/{len(data)}"
     if i == len(data):
         app.destroy()
-        pelmencik = Tk()
         AC130GUNSHIPHERCULES = Label(text=f"easy win i play these ganes before😎😎😎 and {i * 10000000} 🤑🤑🤑", bg=PELMEN7,fg="black", height=4, width=62, font=100)
         AC130GUNSHIPHERCULES.place(x=465, y=300)
+    else:
+        update_question()
     app.mainloop()
     print("КАБУМ!")
-git stash
-    # else:
-    #     update_question()
-# app1 = Tk()
-# AAAAA = Label(text="печельно ето очень печально:(", bg="white", fg="black", height=4, width=30, font=100)
-# AAAAA.place(x=573, y=300)
-# BBBBB = Label(text=f"ви б могли виграти {NET[i]} ви відповіли на {answerforanswer}", bg="white", fg="black",font=1000000000000000000000)
-# BBBBB.place(x=503, y=500)
+
 def update_question():
     global timer, cashprize, getallmoney, answers, question, answer1, answer2, answer3, answer4, answer5, answer6, cashprize
     global data
