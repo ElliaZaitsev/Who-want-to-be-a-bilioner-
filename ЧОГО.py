@@ -22,11 +22,10 @@ def desk():
     shtoeto=""
     for i in data:
         print(i["name"],i["mycoins"])
-        shtoeto=f"{i["name"]} виграв {i["mycoins"]}\n"
+        shtoeto+=f"{i["name"]} --- {i["mycoins"] } балів\n"
     global kria
-    kria=Label(text=data,bg="white",fg="black",font=1000000000000000000000000)
-    kria.place(x=300,y=290)
-    kria["text"] += shtoeto
+    kria=Label(text=shtoeto,bg="white",fg="black",font=1000000000000000000000000)
+    kria.place(x=130,y=50)
 def q(number):
     print(number)
     G = random.choice(["камінь","ножниці","папір"])
