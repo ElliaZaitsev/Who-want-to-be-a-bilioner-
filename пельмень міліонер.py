@@ -79,38 +79,9 @@ def getmoney():
     theend=Tk()
     yougetmoney=Label(text=f"ви забрали всі гроші! і заробили {i*100000} won!",bg=PELMEN7,fg="black",height=4,width=62,font=100)
     yougetmoney.place(x=465,y=300)
-def rightanswer(Button):
-    global i,pelmenchiku,datascore,spisok,coins
-    print(Button['text'])
-    if Button["text"]==data[i]["correctanswer"]:
-        question["text"]="ПРАВИЛЬНО!"
-        answers["text"]="відповідь 1/10"
-        cashprize["text"]="100.000"
-        i+=1
-        cashprize["text"]=i*10000000
-        answers["text"] = f"відповідь {i}/{len(data)}"
-        if i == len(data):
-            app.destroy()
-            AC130GUNSHIPHERCULES = Label(text=f"easy win i play these ganes before😎😎😎 and i have {i * 10000000} 🤑🤑🤑 dollars", bg=PELMEN7,fg="black", height=4, width=62, font=100)
-            AC130GUNSHIPHERCULES.place(x=465, y=300)
-            spisok.append(coins)
-            json.dump(spisok, file, ensure_ascii=False, indent=2)
-            AC131GUNSHIPHERCULES=Label(text=spisok,bg=PELMEN7,fg="black", height=4, width=62, font=100)
-            AC131GUNSHIPHERCULES.place(x=460,y=150)
-            AAAAAAA()
-        else:
-            update_question()
-    else:
-        app.destroy()
-        youdied=Label(text="ви програли =[",bg="white",fg="black",font=10000)
-        AAAAAAA()
-        youdied.place(x=100,y=170)
-        AAAAAAAAAAAAAAA = Label(text=i, bg=PELMEN7, fg="black", height=4, width=62, font=100)
-        AAAAAAAAAAAAAAA.place(x=460, y=250)
-    app.mainloop()
     print("КАБУМ!")
 def AAAAAAA():
-    global i
+    global i,coins
     if i==1:
         coins=100000
     elif i==2:
@@ -132,14 +103,47 @@ def AAAAAAA():
     elif i==10:
         coins=1000000
     pelmeni = ""
-    for BOBRIK in data:
-        pelmeni += f"{BOBRIK["name"]} --- {BOBRIK["coins"]} балів\n"
+    # for BOBRIK in data:
+    #     pelmeni += f"{BOBRIK["name"]} --- {BOBRIK["coins"]} балів\n"
     with open("scrore.json","r",encoding="utf-8") as file:
-        print(data.score)
         datascore=json.load(file)
         datascore.append(coins)
+        print(datascore)
     with open("scrore.json", "w", encoding="utf-8") as file:
         json.dump(datascore, file, ensure_ascii=False, indent=2)
+def rightanswer(Button):
+    global i,pelmenchiku,data_score,spisok
+    print(Button['text'])
+    if Button["text"]==data[i]["correctanswer"]:
+        question["text"]="ПРАВИЛЬНО!"
+        answers["text"]="відповідь 1/10"
+        cashprize["text"]="100.000"
+        i+=1
+        cashprize["text"]=i*10000000
+        answers["text"] = f"відповідь {i}/{len(data)}"
+        if i == len(data):
+            app.destroy()
+            AC130GUNSHIPHERCULES = Label(text=f"easy win i play these ganes before😎😎😎 and i have {i * 10000000} 🤑🤑🤑 dollars", bg=PELMEN7,fg="black", height=4, width=62, font=100)
+            AC130GUNSHIPHERCULES.place(x=465, y=300)
+            AAAAAAA()
+            with open("scrore.json", "r", encoding="utf-8") as file:
+                data_score=json.load(file)
+                data_score.append(coins)
+
+            AC131GUNSHIPHERCULES=Label(text=data_score,bg=PELMEN7,fg="black", height=4, width=62, font=100)
+            AC131GUNSHIPHERCULES.place(x=460,y=150)
+        else:
+            update_question()
+    else:
+        app.destroy()
+        youdied=Label(text="ви програли =[",bg="white",fg="black",font=10000)
+        AAAAAAA()
+        with open("scrore.json", "r", encoding="utf-8") as file:
+            datascore = json.load(file)
+        AC132GUNSHIPHERCULES = Label(text=datascore, bg=PELMEN7, fg="black", height=4, width=62, font=100)
+        AC132GUNSHIPHERCULES.place(x=460, y=150)
+        youdied.place(x=100,y=170)
+    app.mainloop()
 def update_question():
     global timer, cashprize, getallmoney, answers, question, answer1, answer2, answer3, answer4, answer5, answer6, cashprize
     global data
