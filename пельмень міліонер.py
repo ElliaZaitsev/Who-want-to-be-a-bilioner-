@@ -26,7 +26,7 @@ zasho="ням🥳"
 i=0
 def advice50_advice50():
     global niam, playedadvice, update_question,i,coins
-    # podskazka50na50["state"]="disabled"
+    podskazka50na50["state"]="disabled"
     answer1["state"] = "disabled"
     answer2["state"] = "disabled"
     answer3["state"] = "disabled"
