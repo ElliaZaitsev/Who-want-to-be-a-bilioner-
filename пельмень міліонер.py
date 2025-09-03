@@ -26,7 +26,7 @@ zasho="ням🥳"
 i=0
 def advice50_advice50():
     global niam, playedadvice, update_question,i,coins
-    podskazka50na50["state"]="disabled"
+    # podskazka50na50["state"]="disabled"
     answer1["state"] = "disabled"
     answer2["state"] = "disabled"
     answer3["state"] = "disabled"
@@ -47,9 +47,9 @@ def advice50_advice50():
     while True:
         answers = [answer1, answer2, answer3, answer4, answer5, answer6]
 
-        for i in range(6):
-            if numnumnum == i or answer_number == i or PEELMEEN == i:
-                answers[i]["state"] = "normal"
+        for kwaa in range(6):
+            if numnumnum == kwaa or answer_number ==kwaa  or PEELMEEN == kwaa:
+                answers[kwaa]["state"] = "normal"
         break
 def playeradviec():
     podskazkaporada["state"] = "disabled"
@@ -105,11 +105,11 @@ def AAAAAAA():
     pelmeni = ""
     # for BOBRIK in data:
     #     pelmeni += f"{BOBRIK["name"]} --- {BOBRIK["coins"]} балів\n"
-    with open("scrore.json","r",encoding="utf-8") as file:
+    with open("score.json","r",encoding="utf-8") as file:
         datascore=json.load(file)
         datascore.append(coins)
         print(datascore)
-    with open("scrore.json", "w", encoding="utf-8") as file:
+    with open("score.json", "w", encoding="utf-8") as file:
         json.dump(datascore, file, ensure_ascii=False, indent=2)
 def rightanswer(Button):
     global i,pelmenchiku,data_score,spisok
@@ -138,7 +138,7 @@ def rightanswer(Button):
         app.destroy()
         youdied=Label(text="ви програли =[",bg="white",fg="black",font=10000)
         AAAAAAA()
-        with open("scrore.json", "r", encoding="utf-8") as file:
+        with open("score.json", "r", encoding="utf-8") as file:
             datascore = json.load(file)
         AC132GUNSHIPHERCULES = Label(text=datascore, bg=PELMEN7, fg="black", height=4, width=62, font=100)
         AC132GUNSHIPHERCULES.place(x=460, y=150)
