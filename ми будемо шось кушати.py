@@ -20,8 +20,12 @@ ball_x=3
 ball_y=3
 PELMEN6="#2BA5C4"
 app1=None
+def relpay():
+    odin=0
+    dwa=0
 def closesomething():
-    can.destroy()
+    global app1
+    app1.destroy()
 def moving(event):
     if event.keysym == "w" and ahh.coords(plat1)[1]-20>0:
         ahh.move(plat1, 0, -20)
@@ -55,28 +59,32 @@ def ballmove():
     if ahh.coords(ball)[0] > ahh.coords(plat1)[0] and ahh.coords(ball)[0] < ahh.coords(plat1)[2] \
             and ahh.coords(ball)[1] > ahh.coords(plat1)[1] and ahh.coords(ball)[1] < ahh.coords(plat1)[3]:
         ball_x=-ball_x
-        global app1
+    global app1
     if odin==1:
         can.destroy()
         app1 = Tk()
-        pelmememeememem = Label(text=f"виграв гравець 1 з рахунком {odin}", bg=PELMEN6, height=4, width=50, font=1000000000000000000)
+        pelmememeememem = Label(text=f"виграв гравець 1 з рахунком <<{odin}>>", bg=PELMEN6, height=4, width=50, font=1000000000000000000)
         pelmememeememem.place(x=0, y=120)
-        pelmen1 = Label(text=f"гравець 2 програв за рахунком{dwa}", bg=PELMEN6, height=4, width=50, font=1000000000000000000)
+        pelmen1 = Label(text=f"гравець 2 програв за рахунком <<{dwa}>>", bg=PELMEN6, height=4, width=50, font=1000000000000000000)
         pelmen1.place(x=1000, y=120)
         closeit = Button(text="Restart", bg="orange", height=4, width=50, font=1000000000000000000,
                          command=closesomething)
-        closeit.place(x=800, y=200)
+        closeit.place(x=80, y=500)
+        replay = Button(text="Retry", bg="blue", height=4, width=50, font=1000000000000000000, command=relpay)
+        replay.place(x=700, y=500)
         app1.mainloop()
     elif dwa==1:
         can.destroy()
         app1=Tk()
         pelmen1=Label(text=f"гравець 2 виграв за рахунком <<{dwa}>>",bg=PELMEN6, height=4, width=50,font=1000000000000000000)
-        pelmen1.place(x=1000,y=120)
-        pelmememeememem = Label(text=f"гравець 1 програв з рахунком {odin}", bg=PELMEN6, height=4, width=50,font=1000000000000000000)
-        pelmememeememem.place(x=100, y=120)
+        pelmen1.place(x=80,y=120)
+        pelmememeememem = Label(text=f"гравець 1 програв з рахунком <<{odin}>>", bg=PELMEN6, height=4, width=50,font=1000000000000000000)
+        pelmememeememem.place(x=80, y=120)
         closeit = Button(text="Restart",bg="orange",height=4, width=50,font=1000000000000000000,command=closesomething)
-        closeit.place(x=800,y=200)
+        closeit.place(x=100,y=500)
         can.destroy()
+        replay=Button(text="Retry",bg="blue",height=4, width=50,font=1000000000000000000,command=relpay)
+        replay.place(x=10000,y=500)
         app1.mainloop()
 ballmove()
 can.focus_set()
@@ -85,192 +93,3 @@ can.bind('<w>', moving)
 can.bind("<e>",moving)
 can.bind('<q>', moving)
 can.mainloop()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# ahh.create_rectangle(0,0,1500,800,fill="gray")
-# ahh.create_rectangle(450,200,1200,500,fill="green",width=5)
-# ahh.create_rectangle(490,300,1167,400,fill="yellow",width=5)
-# ahh.create_line(0,0,450,200,fill="green",width=10)
-# ahh.create_line(1500,800,1200,500,fill="green",width=10)
-# ahh.create_line(0,800,450,500,fill="green",width=10)
-# ahh.create_line(1200,200,1500,0,fill="green",width=10)
-# ahh.create_line(450,200,490,300,width=4)
-# ahh.create_line(1200,500,1167,400,width=4)
-# ahh.create_line(450,500,490,400,width=4)
-# ahh.create_line(1200,200,1167,300,width=4)
-# ahh.create_line()
-# ahh.create_line()
-# ahh.create_oval(500,100,1000,600,width=5,fill="yellow")
-# ahh.create_oval(800,200,900,300,width=2,fill="blue")
-# ahh.create_oval(600,200,700,300,width=2,fill="blue")
-# ahh.create_line(600,450,800,450,width=2)
-# ahh.create_line(800,450,950,400,width=2)
-# ahh.create_line(550,400,600,450,width=2)
