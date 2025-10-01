@@ -1,5 +1,18 @@
 from tkinter import *
 class BOOOBBEEEEER:
+    can = Tk()
+    can.title("board tenis")
+    can.geometry()
+    can.resizable(True, True)
+    ahh = Canvas(width=5000, height=5000, bg="white")
+    ahh.pack()
+    ahh.create_rectangle(0, 0, 1525, 850, fill="green")
+    ahh.create_line(760, 1, 760, 900, dash=250)
+    ball = ahh.create_oval(726, 350, 796, 420, fill="white")
+    plat1 = ahh.create_rectangle(100, 230, 90, 530, fill="white")
+    plat2 = ahh.create_rectangle(1345, 230, 1335, 523, fill="white")
+    pelmenius = ahh.create_text(500, 120, text="0", font="arial 50")
+    pelmen = ahh.create_text(1000, 120, text="0", font="arial 50")
     odin = 0
     dwa = 0
     ball_x = 3
@@ -20,11 +33,8 @@ class BOOOBBEEEEER:
         self.pelmenius = self.ahh.create_text(500, 120, text="0", font="arial 50")
         self.pelmen = self.ahh.create_text(1000, 120, text="0", font="arial 50")
         print(self.ahh.coords(self.plat1))
-
-    def ballmove(self):
-
         self.ahh.move(self.ball, self.ball_x, self.ball_y)
-        self.ahh.after(10, self.ballmove)
+        self.ahh.after(10,)
         if self.ahh.coords(self.ball)[3] + 25 > 850:
             self.ball_y = -self.ball_y
         elif self.ahh.coords(self.ball)[2] + 25 > 1545:
@@ -45,7 +55,7 @@ class BOOOBBEEEEER:
         if self.ahh.coords(self.ball)[0] > self.ahh.coords(self.plat1)[0] and self.ahh.coords(self.ball)[0] < self.ahh.coords(self.plat1)[2] \
                 and self.ahh.coords(self.ball)[1] > self.ahh.coords(self.plat1)[1] and self.ahh.coords(self.ball)[1] < self.ahh.coords(self.plat1)[3]:
             self.ball_x = -self.ball_x
-        
+
         if self.odin == 1:
             self.can.destroy()
             self.app1 = Tk()
@@ -56,7 +66,7 @@ class BOOOBBEEEEER:
                             font=1000000000000000000)
             self.pelmen1.place(x=1000, y=120)
             self.closeit = Button(text="Restart", bg="orange", height=4, width=50, font=1000000000000000000,
-                             command=self.closesomething)
+                             )
             self.closeit.place(x=80, y=500)
             self.replay = Button(text="Retry", bg="blue", height=4, width=50, font=1000000000000000000, command=self.relpay)
             self.replay.place(x=700, y=500)
@@ -71,11 +81,16 @@ class BOOOBBEEEEER:
                                     font=1000000000000000000)
             self.pelmememeememem.place(x=80, y=120)
             self.closeit = Button(text="Restart", bg="orange", height=4, width=50, font=1000000000000000000,
-                             command=self.closesomething)
+                             )
             self.closeit.place(x=100, y=500)
             self.can.destroy()
             self.replay = Button(text="Retry", bg="blue", height=4, width=50, font=1000000000000000000, command=self.relpay)
             self.replay.place(x=10000, y=500)
             self.app1.mainloop()
+        self.can.focus_set()
+        self.can.bind("<s>",)
+        self.can.bind('<w>',)
+        self.can.bind("<e>",)
+        self.can.bind('<q>',)
 kria=BOOOBBEEEEER()
 kria.window()
