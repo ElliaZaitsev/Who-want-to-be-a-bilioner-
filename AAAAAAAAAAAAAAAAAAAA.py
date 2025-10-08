@@ -26,19 +26,11 @@ class BOOOBBEEEEER:
         self.pelmenius = self.ahh.create_text(500, 120, text="0", font="arial 50")
         self.pelmen = self.ahh.create_text(1000, 120, text="0", font="arial 50")
         print(self.ahh.coords(self.plat1))
-        self.can.focus_set()
-        self.can.bind(
-            "<s>",
-        )
-        self.can.bind(
-            "<w>",
-        )
-        self.can.bind(
-            "<e>",
-        )
-        self.can.bind(
-            "<q>",
-        )
+        self.can.focus_force()
+        self.can.bind("<s>", self.moving)
+        self.can.bind("<w>", self.moving)
+        self.can.bind("<e>", self.moving)
+        self.can.bind("<q>", self.moving)
         self.ballmoving()
         self.can.mainloop()
     def closeeeee(self):
@@ -122,8 +114,8 @@ class BOOOBBEEEEER:
                 #     font=1000000000000000000,
                 #     command=self.replaygame
                 # )
-                # self.replay.place(x=700, y=500)
-                # self.app1.mainloop()
+                # replay.place(x=700, y=500)
+                # self.self.app1.mainloop()
             elif self.dwa>self.odin:
                 self.can.destroy()
                 self.app1 = Tk()
@@ -164,5 +156,21 @@ class BOOOBBEEEEER:
             self.replay.place(x=1000, y=500)
             self.app1.mainloop()
 
+    def moving(self,event):
+        if event.keysym == "w" and self.ahh.coords(self.plat1)[1] - 20 > 0:
+            self.ahh.move(self.plat1, 0, -20)
+        elif event.keysym == "s" and self.ahh.coords(self.plat1)[3] + 20 < 850:
+            self.ahh.move(self.plat1, 0, 20)
+        elif event.keysym == "e" and self.ahh.coords(self.plat2)[1] - 20 > 0:
+            self.ahh.move(self.plat2, 0, -20)
+        elif event.keysym == "q" and self.ahh.coords(self.plat2)[3] + 20 < 850:
+            self.ahh.move(self.plat2, 0, 20)
 kria = BOOOBBEEEEER()
 kria.window()
+# kria.can.focus_set()
+# kria.can.bind("<s>",kria.moving)
+# kria.can.bind('<w>', kria.moving)
+# kria.can.bind("<e>",kria.moving)
+# kria.can.bind('<q>', kria.moving)
+kria.stop_game()
+# kria.can.focus_set()
