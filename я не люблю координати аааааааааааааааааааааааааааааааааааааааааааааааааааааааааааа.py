@@ -1,0 +1,18 @@
+from tkinter import *
+can=Tk()
+first=[1015,800,500,770]
+can.title("board tenis")
+can.geometry()
+can.resizable(True,True)
+ahh=Canvas(width=5000,height=5000,bg="white")
+ahh.pack()
+ahh.create_rectangle(0,0,1525,850,fill="white")
+plat=ahh.create_rectangle(first,fill="white")
+ball=ahh.create_oval(first,fill="white")
+box1=ahh.create_rectangle(first,fill="white")
+box2=ahh.create_rectangle(first,fill="white")
+box3=ahh.create_rectangle(first,fill="white")
+box4=ahh.create_rectangle(first,fill="white")
+box5=ahh.create_rectangle(first,fill="white")
+box6=ahh.create_rectangle(first,fill="white")
+can.mainloop()
