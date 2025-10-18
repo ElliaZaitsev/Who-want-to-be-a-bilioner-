@@ -2,6 +2,10 @@ from tkinter import *
 import random
 can=Tk()
 first=[1015,800,500,770]
+def relpay():
+    global app1
+    app1.destroy()
+    window()
 can.title("board tenis")
 dousomethingwin=["you win something🥳🥳🥳","you win nothing😓😭🥲😿"]
 ujustdied=["Ти пограв💀... я навіть не знаю від чого LoL","киньте монетку щоб продовжити","Принцесса в іншій фортеці","ваше гра - рраз и нету","ABOBUS","wht","hehe boi","oops","SKADOOSH","апчхи! ой ти програв через те що я пчихнув???"]
@@ -27,11 +31,27 @@ tipa_figoletovuj="#8629FF"
 tipa_krasivo="#568AD2"
 tipa_WOOW="#79983E"
 can.resizable(True,True)
+def window():
+    global ahh
 ahh=Canvas(width=5000,height=5000,bg=tipa_zelenuj)
 ahh.pack()
 ahh.create_rectangle(0,0,1525,850,fill=tipa_orange)
 plat=ahh.create_rectangle(1015,770,500,740,fill=tipa_WOOW)
 ball=ahh.create_oval(126,650,196,720,fill=tipa_blue)
+for i in range(7):
+    box1=ahh.create_rectangle(x,y,x-x_size,y+y_size,fill=tipa_janeznaju)
+    if i == 1:
+        y=230
+        x = 990
+    elif i==2:
+        x = 740
+    elif i == 3:
+        x = 610
+        y=40
+    elif i==4:
+        x=860
+    elif i==5:
+        x=1110
 def moving(event):
     if event.keysym == "a" and ahh.coords(plat)[0] - 20 > -5:
         ahh.move(plat, -10, 0)
@@ -65,7 +85,7 @@ def ballmove():
         youjustdiedLOOOOOOOL.place(x=100,y=50)
         lol_restart=Button(text="free 1 million of null $_$ :)",bg="#4196D2",height=4, width=50, font=100,command=app1.destroy)
         lol_restart.place(x=100,y=250)
-        IWANNARUNAWAAAY=Button(text="it's a secret button🤔🤔🤔???",bg="#79983E",height=4,width=50,font=100)
+        IWANNARUNAWAAAY=Button(text="it's a secret button🤔🤔🤔???",bg="#79983E",height=4,width=50,font=100,command=relpay)
         IWANNARUNAWAAAY.place(x=800,y=250)
         secret=Button(text="press if you want to win",height=4,width=50,font=100,bg="#568AD2",command=app1.destroy)
         secret.place(x=100,y=500)
@@ -76,19 +96,5 @@ def ballmove():
         lol=Button(text="click to find out what you won...",bg="#64AF91",height=4,width=50,font=100,command=buttoninbutton)
         lol.place(x=480,y=300)
         app2.mainloop()
-for i in range(7):
-    box1=ahh.create_rectangle(x,y,x-x_size,y+y_size,fill=tipa_janeznaju)
-    if i == 1:
-        y=230
-        x = 990
-    elif i==2:
-        x = 740
-    elif i == 3:
-        x = 610
-        y=40
-    elif i==4:
-        x=860
-    elif i==5:
-        x=1110
 ballmove()
 can.mainloop()
