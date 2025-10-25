@@ -62,11 +62,9 @@ ahh = Canvas(width=5000, height=5000, bg=tipa_zelenuj)
 ahh.pack()
 ahh.create_rectangle(0, 0, 1525, 850, fill=tipa_orange)
 plat = ahh.create_rectangle(1015, 770, 500, 740, fill=tipa_WOOW)
-ball = ahh.create_oval(600, 650, 680, 720, fill=tipa_blue)
+ball = ahh.create_oval(600, 650, 650, 700, fill=tipa_blue)
 blocks = []
 for i in range(7):
-    box1 = ahh.create_rectangle(x, y, x - x_size, y + y_size, fill=tipa_janeznaju)
-    blocks.append(box1)
 
     if i == 1:
         y = 230
@@ -81,6 +79,8 @@ for i in range(7):
         x = 860
     elif i == 5:
         x = 1110
+    box1 = ahh.create_rectangle(x, y, x - x_size, y + y_size, fill=tipa_janeznaju)
+    blocks.append(box1)
 
 print(blocks)
 
@@ -198,15 +198,22 @@ lolonly1 = [1, 1, 1, 1, 1, 1, 1, 1, 1]
 
 
 def delete_blocks():
-    ahh.after(5, delete_blocks)
     global lolonly1
     if (
+
         ahh.coords(ball)[0] >= 860 - x_size
         and ahh.coords(ball)[2] <= 860
         and ahh.coords(ball)[1] > 420
         and ahh.coords(ball)[3] < 420 + y_size
     ):
+        if lolonly1[0] == 0:
+            print("Блок уже удалён!")
         ahh.delete(blocks[0])
+        ahh.update_idletasks()
+        ahh.update()
+        print("После удаления:", ahh.coords(blocks[0]))
+
+
         lolonly1[0] = 0
         print("LOOOOOOOOOOOOL")
     elif (
@@ -224,6 +231,7 @@ def delete_blocks():
         ahh.delete(blocks[2])
         lolonly1[2] = 0
         print("she was a fairy pum pu rum rum pum pu ru rum")
+    ahh.after(30, delete_blocks)
 
 
 ballmove()
