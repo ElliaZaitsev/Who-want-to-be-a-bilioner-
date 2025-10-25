@@ -198,39 +198,45 @@ lolonly1 = [1, 1, 1, 1, 1, 1, 1, 1, 1]
 
 
 def delete_blocks():
-    global lolonly1
+    global lolonly1,ball_y,ball_x
+    ball_coords= ahh.coords(ball)
+    ball_x1=ball_coords[0]
+    ball_x2 = ball_coords[2]
+    ball_y1=ball_coords[1]
+    ball_y2=ball_coords[3]
     if (
 
-        ahh.coords(ball)[0] >= 860 - x_size
-        and ahh.coords(ball)[2] <= 860
-        and ahh.coords(ball)[1] > 420
-        and ahh.coords(ball)[3] < 420 + y_size
+        ball_x1 >= 860 - x_size
+        and ball_x2 <= 860
+        and ball_y1 > 420
+        and ball_y2 < 420 + y_size
     ):
-        if lolonly1[0] == 0:
+        if lolonly1[0] == 1:
             print("Блок уже удалён!")
-        ahh.delete(blocks[0])
-        ahh.update_idletasks()
-        ahh.update()
-        print("После удаления:", ahh.coords(blocks[0]))
+            ahh.delete(blocks[0])
+            ahh.update_idletasks()
+            ahh.update()
+            print("После удаления:", ahh.coords(blocks[0]))
+            ball_y=-ball_y
 
-
-        lolonly1[0] = 0
+            lolonly1[0] = 0
         print("LOOOOOOOOOOOOL")
     elif (
-        ball_x >= 990 and ball_x < 740 + x_size and ball_y > 40 and ball_y < 40 + y_size
+        ball_x1>= 990 and ball_x2 < 740 + x_size and  ball_y2 > 40 and  ball_y1 < 40 + y_size
     ):
         ahh.delete(blocks[1])
         lolonly1[1] = 0
         print("EZ")
     elif (
-        ball_x >= 1110
-        and ball_x < 860 + x_size
-        and ball_y > 40
-        and ball_y < 40 + y_size
+            ahh.coords(ball) >= 1110
+        and  ahh.coords(ball) < 860 + x_size
+        and  ahh.coords(ball) > 40
+        and  ahh.coords(ball) < 40 + y_size
     ):
         ahh.delete(blocks[2])
         lolonly1[2] = 0
         print("she was a fairy pum pu rum rum pum pu ru rum")
+    elif ball_x1>=
     ahh.after(30, delete_blocks)
 
 
