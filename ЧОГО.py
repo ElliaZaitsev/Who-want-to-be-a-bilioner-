@@ -16,6 +16,20 @@ colortodefeated="#1368CF"
 colortodumpling="#F2BE00"
 mylives=3
 mycoins=0
+root=Tk()
+user_name=''
+root.geometry("2500x2500")
+ent=Entry()
+ent.pack()
+def funkcija_XEXEEXEXEXE():
+    global user_name
+    WHATTHEHEEEEELOOMG=-1
+    user_name=ent.get()
+    print(user_name)
+    print("если хочеш депнуть в каз то бепни все ну а если есть до деп то кинь еще а последний деп оставь вить окуп ждет все окупиться поверь еще еще!   (ГИМН КАЗИНО)")
+makarena=Button(bg="red",fg="white",height=5,width=20,font=1000000000000000000,command=funkcija_XEXEEXEXEXE)
+makarena.place(x=300,y=400)
+root.mainloop()
 name="бобрик"
 LAVRENIK=None
 def desk():
@@ -63,6 +77,13 @@ def q(number):
             mylives-=1
             app["bg"]="#99CC3D"
             D["bg"]=colortodefeated
+            with open("scrore.json", "r", encoding="utf-8") as file:
+                A = json.load(file)
+                ent = Entry()
+            with open("scrore.json", "w", encoding="utf-8") as file:
+                A = json.load(file)
+                ent = Entry()
+            ent.pack()
         elif G =='ножниці':
             D['text'] = 'користувач виграв'
             mycoins+=100
@@ -122,7 +143,7 @@ def q(number):
         LAVRENIK.place(x=570,y=350)
         app1.mainloop()
     if mylives==0:
-        pelmenchiku["name"]="бобрик"
+        pelmenchiku["name"]=A
         pelmenchiku["mycoins"] = mycoins
         with open("my.json", "r", encoding="utf-8") as file:
             data = json.load(file)
