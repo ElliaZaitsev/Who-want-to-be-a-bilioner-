@@ -1,7 +1,6 @@
 from tkinter import *
 import random
 import json
-from капусточка import user_name
 color1 = "#779FBF"
 color2 = "#700AFF"
 color3 = "#020330"
@@ -133,7 +132,7 @@ def oy_oy_oy_oy_sho_ja_delaju(name):
             app1.mainloop()
 
         if mylives == 0:
-            pelmenchiku["name"] = "бобрик1"
+            pelmenchiku["name"] = name
             pelmenchiku["mycoins"] = mycoins
             with open("my.json", "r", encoding="utf-8") as file:
                 data = json.load(file)
