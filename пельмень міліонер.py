@@ -1,6 +1,9 @@
 import json
 import random
 from tkinter import *
+
+from ЧОГО import oy_oy_oy_oy_sho_ja_delaju
+
 with open("pelmen.json", "r", encoding="utf-8") as file:
     data = json.load(file)
 spisok=[]
