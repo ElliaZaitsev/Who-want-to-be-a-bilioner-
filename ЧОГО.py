@@ -203,3 +203,4 @@ def oy_oy_oy_oy_sho_ja_delaju(name):
     SLOVA = Label(text="", fg="black", bg=color5, height=15, width=15)
     SLOVA.place(x=1000, y=1000)
     app.mainloop()
+# lol
