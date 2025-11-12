@@ -39,7 +39,7 @@ def funkcija_skadoosh():
         print("https://youtu.be/UgAwZ1aQFJc?si=FtZhyR_gYzhCJoDl")
 KNOPKA=Button(text="confirm :P ",bg="purple",height=4, width=30, font=100,command=funkcija_skadoosh)
 KNOPKA.place(x=140,y=590)
-
+# кабанчик
 
 
 
