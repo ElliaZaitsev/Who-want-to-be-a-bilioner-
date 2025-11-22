@@ -40,15 +40,8 @@ def POVESTOCHKA_W_JSONEHEEHELOL(data,logino):
 #         if i["loginoo"] == logino:
 #             app.destroy()
 #             app.destroy()
-def kaban_propav():
-    global ABOBA_PROOOOOO
-    RBX=Tk()
-    ABOBA_PROOOOOO.destroy()
-    abobus=Entry(bg='blue',font="4000000000000000000000000000000000000000000000000000000000000000")
-    abobus.place(x=530, y=40,height=50,width=500)
-    RBX.mainloop()
 def onetjakriaknuw():
-    ABOBA_PROOOOOO=Tk()
+    oy=Tk()
     Label1=Label(bg='blue',font="4000000000000000000000000000000000000000000000000000000000000000")
     Label1.place(x=60, y=40, height=50, width=500)
     Label2 = Label(bg='blue', font="4000000000000000000000000000000000000000000000000000000000000000")
@@ -70,6 +63,14 @@ def onetjakriaknuw():
     notiatoczka=Button(text="CDELAJTE NOTATOCHKU",fg="black", bg="red", height=4, width=30, font=100,command=kaban_propav)
     notiatoczka.place(x=1200,y=670)
 
+    # global oy
+    # RBX = Tk()
+    # oy.destroy()
+    # abobus = Entry(bg='blue', font="4000000000000000000000000000000000000000000000000000000000000000")
+    # abobus.place(x=530, y=40, height=50, width=500)
+    # kla = Entry(bg='blue', font="4000000000000000000000000000000000000000000000000000000000000000")
+    # kla.place(x=530, y=40, height=50, width=500)
+    # RBX.mainloop()
 
 
 
@@ -78,30 +79,15 @@ def onetjakriaknuw():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    ABOBA_PROOOOOO.mainloop()
+    oy.mainloop()
+def kaban_propav():
+    global oy
+    print("print(print(print(print()print(print(print(print(print(print(print)))))")
+    abobaa=Tk()
+    oy.destroy()
+    KABAN=Entry(bg='blue',font="4000000000000000000000000000000000000000000000000000000000000000")
+    KABAN.place(x=1110, y=670, height=50, width=500)
+    abobaa.mainloop()
 def cheap_user(logino,parolo):
     with open("../kapustochka.json", "r", encoding="utf-8") as file:
         data=json.load(file)
