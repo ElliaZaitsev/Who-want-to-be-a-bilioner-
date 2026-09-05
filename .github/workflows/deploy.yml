@@ -34,3 +34,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Show files inside PythonProject1 
+        run: ls -la ./PythonProject1
+      
